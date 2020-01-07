@@ -121,7 +121,7 @@ const createList = (availableItems) => {
   let groceryList = [];
   availableItems.forEach( (product) => {
     if (product.available === true) {
-      groceryList.push(product);
+      groceryList.push(product.name);
     }
   });
   return groceryList;
