@@ -121,7 +121,7 @@ const createList = (availableItems) => {
   let groceryList = [];
   availableItems.forEach( (product) => {
     if (product.available === true) {
-      groceryList.push(product);
+      groceryList.push(product.name);
     }
   });
   return groceryList;
@@ -142,7 +142,19 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
+  let outPutArray = [];
+  arr.forEach( (num) => {
+    if (num % 5 === 0 && num % 3 !== 0) {
+      outPutArray.push('Buzz');
+    } else if (num % 3 === 0 && num % 5 !== 0) {
+      outPutArray.push('Fizz');
+    } else if (num % 3 === 0 && num % 5 === 0) {
+      outPutArray.push('Fizz Buzz');
+    } else {
+      outPutArray.push(num);
+    }
+  });
+  return outPutArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
