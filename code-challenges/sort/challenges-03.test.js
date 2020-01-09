@@ -141,11 +141,26 @@ const sortPeopleBetter = arr => {
   // Solution code here...
   arr.sort((a, b) => {
     if (a.lastName.toLowerCase() < b.lastName.toLowerCase()) {
+      return -1;
+    } else if (a.lastName.toLowerCase() > b.lastName.toLowerCase()) {
+      return 1;
+    } else {
       if (a.firstName.toLowerCase() < b.firstName.toLowerCase()) {
         return -1;
+      } else if (a.firstName.toLowerCase() > b.firstName.toLowerCase()) {
+        return 1;
+      } else {
+        if (a.age < b.age) {
+          return -1;
+        } else if (a.age > b.age) {
+          return 1;
+        } else {
+          return 0;
+        }
       }
     }
   });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
