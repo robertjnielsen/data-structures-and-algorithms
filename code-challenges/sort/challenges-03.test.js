@@ -52,6 +52,8 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 
 const alphabetizeBetter = arr => {
   // Solution code here...
+  arr.sort((a, b) => a.localeCompare(b));
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -69,6 +71,9 @@ Here is an example of the input:
 
 const sortByPrice = arr => {
   // Solution code here...
+  arr.sort((a, b) => {
+    return parseFloat(a.price) - parseFloat(b.price);
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -81,6 +86,7 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 
 const sortNumbersByLength = arr => {
   // Solution code here...
+  arr.sort((a, b) => a.length - b.length);
 };
 
 /*-----------------------------------------------------------------------------------------------
