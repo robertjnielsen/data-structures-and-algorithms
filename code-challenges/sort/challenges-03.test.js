@@ -72,8 +72,9 @@ Here is an example of the input:
 const sortByPrice = arr => {
   // Solution code here...
   arr.sort((a, b) => {
-    return parseFloat(a.price) - parseFloat(b.price);
+    return a.price - b.price;
   });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
