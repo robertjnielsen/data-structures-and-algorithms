@@ -41,6 +41,7 @@ const citiesAtoJ = arr => {
   // Solution code here...
   let cityNames = [];
   arr.forEach(city => (/^[A-J]/.test(city) ? cityNames.push(city) : null));
+  return cityNames;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -57,6 +58,7 @@ Do not use the vertical bar (pipe) in your pattern.
 
 const matchMonth = input => {
   // Solution code here...
+  return /^[Oo]ct(ober)?$/.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -71,6 +73,7 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 
 const noPunctuation = str => {
   // Solution code here...
+  return str.match(/\b\w*\s/g);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -87,6 +90,7 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 
 let hangman = str => {
   // Solution code here...
+  return str.replace(/a|e|i|o|u/gi, '_');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -104,6 +108,7 @@ const seashells =
 
 const findShells = str => {
   // Solution code here...
+  return str.match(/\w*(ells)/g);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -142,7 +147,7 @@ describe('Testing challenge 2', () => {
       'Return',
       'Words',
       'With',
-      'Letter'
+      'Letter',
     ]);
     expect(capitalResult.length).toStrictEqual(5);
 
@@ -156,7 +161,7 @@ describe('Testing challenge 2', () => {
       'Windsor',
       'Staines',
       'June',
-      'May'
+      'May',
     ]);
 
     expect(isCapitalized('these words are all failures')).toStrictEqual([]);
@@ -176,7 +181,7 @@ describe('Testing challenge 3', () => {
     'Austin',
     'Boston',
     'Newport Beach',
-    'Hoboken'
+    'Hoboken',
   ];
 
   test('It should return the cities whose names begin with the letters A through J', () => {
@@ -197,7 +202,7 @@ describe('Testing challenge 3', () => {
         'Philadelphia',
         'Newark',
         'Sacramento',
-        'Eugene'
+        'Eugene',
       ])
     ).toEqual(expect.arrayContaining(['Albuquerque', 'Chicago', 'Eugene']));
   });
@@ -261,7 +266,7 @@ describe('Testing challenge 5', () => {
       'ac ',
       'scelerisque ',
       'et ',
-      'pharetra '
+      'pharetra ',
     ]);
     expect(noPunctuation(lorem).length).toStrictEqual(23);
     expect(
@@ -302,7 +307,7 @@ describe('Testing challenge 5', () => {
         'year ',
         'began ',
         'on ',
-        '28 '
+        '28 ',
       ])
     );
   });
@@ -327,7 +332,7 @@ describe('Testing challenge 5', () => {
       'odio.',
       'aliquet,',
       'non,',
-      'sem.'
+      'sem.',
     ]);
   });
 });
@@ -363,7 +368,7 @@ describe('Testing challenge 7', () => {
       'sells',
       'shells',
       'sells',
-      'shells'
+      'shells',
     ]);
     expect(findShells(seashells).length).toStrictEqual(9);
   });
