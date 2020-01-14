@@ -23,6 +23,7 @@ const courseInfo = {
 
 const getCourseKeys = obj => {
   // Solution code here...
+  return Object.keys(obj);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -80,6 +81,7 @@ let characters = [
 const getHouses = arr => {
   let houses = [];
   // Solution code here...
+  arr.forEach(character => houses.push(character.house));
   return houses;
 };
 
