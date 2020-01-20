@@ -188,6 +188,10 @@ const isPrime = (value) => {
 
 const countPrimeNumbers = (arr) => {
   // Solution code here...
+  return arr.reduce((primeNums, num) => {
+    isPrime(num) ? primeNums.push(num) : null;
+    return primeNums;
+  }, []).length;
 };
 
 /* ------------------------------------------------------------------------------------------------
