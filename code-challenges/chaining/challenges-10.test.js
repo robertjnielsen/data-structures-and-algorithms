@@ -13,6 +13,13 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 
 const count = (target, input) => {
   // Solution code here...
+  let targetCount = 0;
+  input.map(data => data.forEach(num => {
+    if (num === target) {
+      targetCount++;
+    }
+  }));
+  return targetCount;
 };
 
 /* ------------------------------------------------------------------------------------------------
