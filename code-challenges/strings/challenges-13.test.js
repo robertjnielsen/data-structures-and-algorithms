@@ -111,6 +111,13 @@ Write a function named findEvery that takes in an array of strings, along with a
 
 const findEvery = (arr, target) => {
   // Solution code here...
+  let truthy = 0;
+  arr.forEach(str => (str.includes(target) ? truthy++ : null));
+  if (truthy === arr.length) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
