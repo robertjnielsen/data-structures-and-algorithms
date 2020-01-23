@@ -134,6 +134,11 @@ For example, [['Brook Testing', 'Actual Person'], ['Human Person', 'Brook again'
 
 const unenrollBrook = arr => {
   // Solution code here...
+  return arr.reduce((accum, val) => {
+    const filtered = val.filter(person => !person.includes('Brook'));
+    accum.push(filtered);
+    return accum;
+  }, []);
 };
 
 /* ------------------------------------------------------------------------------------------------
