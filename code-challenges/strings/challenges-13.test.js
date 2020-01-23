@@ -181,6 +181,9 @@ For example, ['abcd', 'efgh', 'ijkl', 'mnop'] returns ['a', 'f', 'k', 'p']
 
 const characterByIndex = arr => {
   // Solution code here...
+  let newArr = [];
+  arr.forEach((str, i) => newArr.push(str[i]));
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
