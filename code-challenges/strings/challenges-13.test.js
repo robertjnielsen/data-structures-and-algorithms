@@ -98,6 +98,9 @@ Write a function named findAnything that takes in an array of strings, along wit
 
 const findAnything = (arr, target) => {
   // Solution code here...
+  let newArr = [];
+  arr.forEach(str => (str.includes(target) ? newArr.push(str) : null));
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
